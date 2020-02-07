@@ -1,8 +1,11 @@
 ﻿using RestSharp;
 
-namespace Open_Chequelist_Template.APIs.Interfaces.Post
+namespace RestfulClientHelper.ClientRequests.Interfaces.Post
 {
-    interface IRestPostRequest
+    /*
+        Interface responsible for managanig post requests with no aunthentication required
+    */
+    public interface IRestPostRequest
     {
         IRestResponse PostRequest<T>(string baseUrl, string relativeUrl, T postObject);
     }

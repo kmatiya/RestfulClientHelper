@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Open_Chequelist_Template.APIs.RestModels;
+﻿using System.Collections.Generic;
+using RestfulClientHelper.ClientRequests.RestModels;
 using RestSharp;
 
-namespace Open_Chequelist_Template.APIs.Interfaces.Get
+namespace RestfulClientHelper.ClientRequests.Interfaces.Get
 {
-    interface IRestGetRequest
+    /*
+        Interface responsible for managanig get requests with no aunthentication required
+    */
+    public interface IRestGetRequest
     {
         IRestResponse GetRequest(string baseUrl, string relativeUrl);
         IRestResponse GetRequest<T>(string baseUrl, string relativeUrl, T postObject);

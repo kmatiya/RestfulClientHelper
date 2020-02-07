@@ -1,15 +1,23 @@
-﻿using System;
-using Open_Chequelist_Template.APIs.Interfaces.Post;
-using Open_Chequelist_Template.Models.Singletones;
+﻿using RestfulClientHelper.ClientRequests.Interfaces.Post;
 using RestSharp;
+using RestSharp.Authenticators;
 
-namespace Open_Chequelist_Template.APIs.Classes.Post
+namespace RestfulClientHelper.ClientRequests.Classes.Post
 {
-    public class RestPostRequest : IRestPostRequest
+    public class RestPostRequest : IRestPostRequest, IRestPostRequestWithBasicAunthentication
     {
         public IRestResponse PostRequest<T>(string baseUrl, string relativeUrl, T postObject)
         {
             var client = new RestClient(baseUrl);
+            var request = new RestRequest(relativeUrl, Method.POST);
+            request.AddObject(postObject);
+            IRestResponse response = client.Execute(request);
+            return response;
+        }
+        public IRestResponse PostRequestWithBasicAunthentication<T>(string username, string password, string baseUrl,
+            string relativeUrl, T postObject)
+        {
+            var client = new RestClient(baseUrl) { Authenticator = new HttpBasicAuthenticator(username, password) };
             var request = new RestRequest(relativeUrl, Method.POST);
             request.AddObject(postObject);
             IRestResponse response = client.Execute(request);

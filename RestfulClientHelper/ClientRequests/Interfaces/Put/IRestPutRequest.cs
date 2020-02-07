@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RestSharp;
+﻿using RestSharp;
 
-namespace Open_Chequelist_Template.APIs.Interfaces.Put
+namespace RestfulClientHelper.ClientRequests.Interfaces.Put
 {
-    interface IRestPutRequest
+    /*
+        Interface responsible for managanig put requests with no aunthentication required
+    */
+    public interface IRestPutRequest
     {
         IRestResponse PutRequest<T>(string baseUrl, string relativeUrl, T postObject);
     }

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace Open_Chequelist_Template.APIs.RestModels
+namespace RestfulClientHelper.ClientRequests.RestModels
 {
     public class RestParameter
     {

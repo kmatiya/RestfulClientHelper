@@ -51,8 +51,11 @@
     <Compile Include="ClientRequests\Classes\Post\RestPostRequest.cs" />
     <Compile Include="ClientRequests\Classes\Put\RestPutRequest.cs" />
     <Compile Include="ClientRequests\Interfaces\Get\IRestGetRequest.cs" />
+    <Compile Include="ClientRequests\Interfaces\Get\IRestGetRequestWithBasicAunthentication.cs" />
     <Compile Include="ClientRequests\Interfaces\Post\IRestPostRequest.cs" />
+    <Compile Include="ClientRequests\Interfaces\Post\IRestPostRequestWithBasicAunthentication.cs" />
     <Compile Include="ClientRequests\Interfaces\Put\IRestPutRequest.cs" />
+    <Compile Include="ClientRequests\Interfaces\Put\IRestPutRequestWithBasicAunthentication.cs" />
     <Compile Include="ClientRequests\RestModels\RestParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
